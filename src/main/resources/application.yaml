@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: cat-game-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/catgame
+    username: catgame
+    password: catgame1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: false
+
+  scheduling:
+    enabled: true
+
+jwt:
+  secret: Y2F0LWdhbWUtYmFja2VuZC1zZWNyZXQta2V5LWZvci1qd3QtdG9rZW4tZ2VuZXJhdGlvbi0yMDI1
+  access-token-expiration: 3600000
+  refresh-token-expiration: 604800000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
